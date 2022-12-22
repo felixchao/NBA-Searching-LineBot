@@ -3,7 +3,7 @@ from fsm import TocMachine
 
 def create_machine():
   machine = TocMachine(
-    states=["user", "start", "fsm", "showgame", "showstandings", "east", "west", 'mvp', 'player', 'searchplayer','team','searchteam','leader','point','rebound','assist','steal','block'],
+    states=["user", "start", "fsm", "showgame", "showstandings", "east", "west", 'mvp', 'player', 'searchplayer','team','searchteam','leader','point','rebound','assist','steal','block','draft'],
     transitions=[
         {
             "trigger": "advance",
@@ -109,7 +109,13 @@ def create_machine():
         },
         {
             "trigger": "advance",
-            "source": ["showgame","fsm","showstandings","east","west","mvp",'player','searchplayer','team','searchteam','leader','point','rebound','assist','steal','block'],
+            "source": "start",
+            "dest": "draft",
+            "conditions": "is_going_to_draft",
+        },
+        {
+            "trigger": "advance",
+            "source": ["showgame","fsm","showstandings","east","west","mvp",'player','searchplayer','team','searchteam','leader','point','rebound','assist','steal','block','draft'],
             "dest": "start",
             "conditions": "is_going_back_to_start",
         },

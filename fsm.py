@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message, send_image_url, send_button_carousel, show_recent_games, show_standings, send_button_message, show_todays_mvp, show_players, show_player_menu, show_teams, show_team_menu, send_leader_carousel, show_leader_points
+from utils import send_text_message, send_image_url, send_button_carousel, show_recent_games, show_standings, send_button_message, show_todays_mvp, show_players, show_player_menu, show_teams, show_team_menu, send_leader_carousel, show_leader_points, start_draft_mocking
 
 import pyimgur
 
@@ -80,6 +80,10 @@ class TocMachine(GraphMachine):
     def is_going_to_block(self,event):
         text = event.message.text
         return text.lower() == "block leader"
+
+    def is_going_to_draft(self,event):
+        text = event.message.text
+        return text.lower() == "start draft"
 
     def is_going_back_to_start(self,event):
         text = event.message.text
@@ -178,3 +182,8 @@ class TocMachine(GraphMachine):
         print("Blocks")
         reply_token = event.reply_token
         show_leader_points(reply_token,"leaders_blk","blocks")
+
+    def on_enter_draft(self,event):
+        print("Draft")
+        reply_token = event.reply_token
+        start_draft_mocking(reply_token)

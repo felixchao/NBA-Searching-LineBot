@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, MessageTemplateAction, TemplateSendMessage, CarouselTemplate, CarouselColumn, ButtonsTemplate,ImageCarouselTemplate, URITemplateAction, ImageCarouselColumn, FlexSendMessage
 from fake_useragent import UserAgent
+import random
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
@@ -113,6 +114,25 @@ def send_button_carousel(id):
                 ]
             ),
             CarouselColumn(
+                thumbnail_image_url = 'https://hoopshabit.com/wp-content/uploads/imagn-images/2017/07/12702527.jpeg',
+                title='Draft Mocking',
+                text='for the future!',
+                actions=[
+                    MessageTemplateAction(
+                        label='start draft',
+                        text='start draft',
+                    ),
+                    MessageTemplateAction(
+                        label='None',
+                        text='none',
+                    ),
+                    MessageTemplateAction(
+                        label='None',
+                        text='none'
+                    )
+                ]
+            ),
+            CarouselColumn(
                 thumbnail_image_url = 'https://www.itemis.com/hubfs/yakindu/statechart-tools/documentation/images/overview_simple_moore.jpg',
                 title='Finite State Machine',
                 text='check for fsm!',
@@ -130,7 +150,7 @@ def send_button_carousel(id):
                         text='none'
                     )
                 ]
-            )
+            ),
         ]
       )
     )
@@ -508,6 +528,335 @@ def send_rank_carousel(reply_token,img_urls,name,leadings):
  }
 ))
     return "OK"
+
+def send_draft_carousel(reply_token,names,images,overalls,teams):
+    line_bot_api = LineBotApi(channel_access_token)
+    line_bot_api.reply_message(reply_token, FlexSendMessage(
+    alt_text='flex',
+    contents={
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": images[0],
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "1:1",
+            "gravity": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img.onl/Cf0PPD",
+                "align": "end",
+                "offsetBottom": "none",
+                "offsetEnd": "5px",
+                "offsetTop": "35px"
+              },
+              {
+                "type": "image",
+                "url": teams[0],
+                "align": "start",
+                "margin": "none",
+                "offsetBottom": "100px"
+              },
+              {
+                "type": "text",
+                "text": overalls[0],
+                "align": "center",
+                "offsetBottom": "140px",
+                "offsetStart": "95px",
+                "size": "3xl",
+                "style": "italic",
+                "weight": "bold",
+                "color": "#DAA520"
+              }
+            ],
+            "position": "absolute",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "endColor": "#00000000",
+              "startColor": "#00000099"
+            },
+            "width": "100%",
+            "height": "50%",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": names[0],
+                        "size": "xl",
+                        "color": "#ffffff",
+                        "offsetTop": "4px"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [],
+                        "flex": 0,
+                        "spacing": "lg"
+                      }
+                    ]
+                  }
+                ],
+                "spacing": "xs"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": images[1],
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "1:1",
+            "gravity": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img.onl/Cf0PPD",
+                "align": "end",
+                "offsetBottom": "none",
+                "offsetEnd": "5px",
+                "offsetTop": "35px"
+              },
+              {
+                "type": "image",
+                "url": teams[1],
+                "align": "start",
+                "margin": "none",
+                "offsetBottom": "100px"
+              },
+              {
+                "type": "text",
+                "text": overalls[1],
+                "align": "center",
+                "offsetBottom": "140px",
+                "offsetStart": "95px",
+                "size": "3xl",
+                "style": "italic",
+                "weight": "bold",
+                "color": "#DAA520"
+              }
+            ],
+            "position": "absolute",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "endColor": "#00000000",
+              "startColor": "#00000099"
+            },
+            "width": "100%",
+            "height": "50%",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": names[1],
+                        "size": "xl",
+                        "color": "#ffffff",
+                        "offsetTop": "4px"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [],
+                        "flex": 0,
+                        "spacing": "lg"
+                      }
+                    ]
+                  }
+                ],
+                "spacing": "xs"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": images[2],
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "1:1",
+            "gravity": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img.onl/Cf0PPD",
+                "align": "end",
+                "offsetBottom": "none",
+                "offsetEnd": "5px",
+                "offsetTop": "35px"
+              },
+              {
+                "type": "image",
+                "url": teams[2],
+                "align": "start",
+                "margin": "none",
+                "offsetBottom": "100px"
+              },
+              {
+                "type": "text",
+                "text": overalls[2],
+                "align": "center",
+                "offsetBottom": "140px",
+                "offsetStart": "95px",
+                "size": "3xl",
+                "style": "italic",
+                "weight": "bold",
+                "color": "#DAA520"
+              }
+            ],
+            "position": "absolute",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "endColor": "#00000000",
+              "startColor": "#00000099"
+            },
+            "width": "100%",
+            "height": "50%",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": names[2],
+                        "size": "xl",
+                        "color": "#ffffff",
+                        "offsetTop": "4px"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [],
+                        "flex": 0,
+                        "spacing": "lg"
+                      }
+                    ]
+                  }
+                ],
+                "spacing": "xs"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    }
+  ]
+}))
+    return "OK"
     
 def show_recent_games(reply_token):
     url = 'https://www.basketball-reference.com/boxscores/'
@@ -790,5 +1139,46 @@ def show_leader_points(reply_token,leader_type,type_end):
         
     send_rank_carousel(reply_token,images,leaders,points)
 
+def start_draft_mocking(reply_token):
+    url = 'https://www.nbadraft.net/nba-mock-drafts/'
+    source = requests.get(url, headers={'user-agent': user_agent.random}).text
+    soup = BeautifulSoup(source, 'html.parser')
+    players = soup.find_all('td',class_ = 'player')
+    first_round = players[:3]
+
+    names = []
+    imgs = []
+    overalls = []
+
+
+    for player in first_round:
+        name_l = player.find('a').text.split()
+        name = name_l[len(name_l)-1]
+        names.append(name)
+        url = player.find('a')['href']
+        source = requests.get(url, headers={'user-agent': user_agent.random}).text
+        soup = BeautifulSoup(source, 'html.parser')
+        overall_s = soup.find('div',class_ = 'overall')
+        overall = overall_s.find('span',class_ = 'value')
+        imgurl = soup.find('div',class_ = 'player-image')
+        imgs.append(imgurl.find('img')['data-lazy-src'])
+        if(overall == None):
+           overalls.append("90")
+        else:
+           overalls.append(overall.text)
+
     
-    
+
+
+    url = 'https://loodibee.com/nba/'
+    source = requests.get(url, headers={'user-agent': user_agent.random}).text
+    soup = BeautifulSoup(source, 'html.parser')
+    teams = soup.find_all('figure')
+    teams = teams[:30]
+
+
+    lotto = random.sample(teams,k=3)
+    team_imgs = []
+    for team in lotto:
+        team_imgs.append(team.find('img')['src'])
+    send_draft_carousel(reply_token,names,imgs,overalls,team_imgs)

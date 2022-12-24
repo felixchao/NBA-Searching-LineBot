@@ -182,7 +182,7 @@ So, enjoy the show that the line bot brings with!
  <img src="https://i.imgur.com/PAajXgt.png">
 </div>
 
-#### 2'rd draft
+#### 2'nd draft
 <div align=center>
  <img src="https://i.imgur.com/38cUEPm.png">
 </div>

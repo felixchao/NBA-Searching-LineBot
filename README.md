@@ -13,7 +13,9 @@ There are more than **7 types** of features that you can play with.
 So, enjoy the show that the line bot brings with!
 
 ## Information
+<div align=center>
 ![](https://i.imgur.com/1xFN0kP.png)
+</div>
 
 **Add Line Friend:**
 

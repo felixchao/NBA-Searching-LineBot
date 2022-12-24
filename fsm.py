@@ -101,7 +101,7 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         im = pyimgur.Imgur(CLIENT_ID)
-        image = im.get_image("S0ce0Ol")
+        image = im.get_image("tzbDhcF")
         send_image_url(reply_token, image.link)
 
 

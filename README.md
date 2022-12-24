@@ -65,7 +65,7 @@ So, enjoy the show that the line bot brings with!
 ![](https://i.imgur.com/TW3FvZu.png)
 
 ### Players List
-* This feature can help you search for you favorite nba player, also you can touch the icon to get the player information on basketball-reference.com.
+* This feature can help you search for you favorite nba player, also you can touch the icon to get the player information on [basketball-reference.com](https://www.basketball-reference.com).
 
 ![](https://i.imgur.com/7iizAvX.png)
 
@@ -153,7 +153,7 @@ So, enjoy the show that the line bot brings with!
 ![](https://i.imgur.com/iUkT2qt.png)
 
 * Call `fsm` to get diagram.
-* Using imgur.com to store my image and represent as an **api** to send message.
+* Using [imgur.com](https://imgur.com/) to store my image and represent as an **api** to send message.
 
 ![](https://i.imgur.com/cHN2HTe.png)
 
@@ -163,9 +163,9 @@ So, enjoy the show that the line bot brings with!
 
 
 ## Bonus
-* Using Web crawler to do searching in this line bot.
-* Using imgur.com to create an api for sending image FSM.
-* Supplying the service to multipe Line accounts at the same time.
+* Using **Web crawler** to do searching in this line bot.
+* Using [imgur.com](https://imgur.com/) to create an **api** for sending image FSM.
+* Supplying the service to **multipe Line accounts** at the same time.
 * Web crawling website:
   * [basketball-reference.com](https://www.basketball-reference.com)
   * [nbadraft.net](https://www.nbadraft.net)

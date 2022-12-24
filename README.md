@@ -6,7 +6,7 @@ A Line bot based on a finite state machine
 
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
 ## Creation
-Due to the inconvenience of searching nba database in NBA.com, I create this line bot for the person who doesn't want to watch games, but is interesting in the **games**, **players**, **teams**, even **draft**. 
+Due to the inconvenience of searching nba database in [NBA.com](https://www.nba.com), I create this line bot for the person who doesn't want to watch games, but is interesting in the **games**, **players**, **teams**, even **draft**. 
 
 There are more than **7 types** of features that you can play with.
 
@@ -76,7 +76,7 @@ So, enjoy the show that the line bot brings with!
 
 
 ### Teams List
-* This feature can help you find your favorite team in the league (**total 30 teams**), and also, you can touch on the icon to get team information on basketball-reference.com.
+* This feature can help you find your favorite team in the league (**total 30 teams**), and also, you can touch on the icon to get team information on [basketball-reference.com](https://www.basketball-reference.com).
 
 ![](https://i.imgur.com/LXZ4GK0.png)
 
@@ -167,8 +167,8 @@ So, enjoy the show that the line bot brings with!
 * Using imgur.com to create an api for sending image FSM.
 * Supplying the service to multipe Line accounts at the same time.
 * Web crawling website:
-  * basketball-reference.com
-  * nbadraft.net
+  * [basketball-reference.com](https://www.basketball-reference.com)
+  * [nbadraft.net](https://www.nbadraft.net)
 
 
 

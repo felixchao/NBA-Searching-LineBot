@@ -219,7 +219,7 @@ So, enjoy the show that the line bot brings with!
 * Using **Web crawler** to do searching in this line bot with **Beautiful Soup (bs4)**.
 * Using [imgur.com](https://imgur.com/) to create an **api** for sending image FSM.
 * Supplying the service to **multipe Line accounts** at the same time.
-* Using Flex Message Template(**.json**).
+* Using Flex Message Template (**json**).
 * Web crawling website:
   * [basketball-reference.com](https://www.basketball-reference.com)
   * [nbadraft.net](https://www.nbadraft.net)
